@@ -1,0 +1,113 @@
+/* ----------------------------------------------------------------- */
+/* Global */
+/* ----------------------------------------------------------------- */
+body {
+  background: #212326;
+}
+
+main {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+section.animation-zone {
+  height: 70%;
+}
+
+/* ----------------------------------------------------------------- */
+/* Header */
+/* ----------------------------------------------------------------- */
+header {
+  font-family: "Livvic", sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  text-align: center;
+}
+
+div.header-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
+  place-items: center;
+}
+
+div.gradient-border {
+  width: 95%;
+  height: 1px;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, right top, from(#d14c13), to(#d16c13));
+  background: linear-gradient(to right, #d14c13, #d16c13);
+}
+
+/* ----------------------------------------------------------------- */
+/* Animation Zone */
+/* ----------------------------------------------------------------- */
+div.array-container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  width: 90%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+div.array-container div.array-element {
+  height: 60px;
+  width: 60px;
+  margin: 0 1px 0 1px;
+  background: #d16c13;
+  display: inline-block;
+  text-align: center;
+  font-family: "Livvic", sans-serif;
+  font-weight: bold;
+}
+
+div.array-container div.array-element p {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+/* ----------------------------------------------------------------- */
+/* Buttons */
+/* ----------------------------------------------------------------- */
+section.buttons {
+  position: fixed;
+  bottom: 7%;
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Livvic", sans-serif;
+}
+
+section.buttons div.wrapper {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  text-align: center;
+}
+
+section.buttons button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#d14c13), to(#d16c13));
+  background: linear-gradient(to right, #d14c13, #d16c13);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,112 @@
+/* ----------------------------------------------------------------- */
+/* Global */
+/* ----------------------------------------------------------------- */
+
+$bg-color: #212326;
+$default-font: 'Livvic', sans-serif;
+$text-color: #fff;
+$main-gradient: linear-gradient(to right, #d14c13, #d16c13);
+
+@mixin center() {
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  background: $bg-color;
+}
+
+main {
+  position: relative;
+  @include center();
+}
+
+section.animation-zone {
+  height: 70%;
+}
+
+/* ----------------------------------------------------------------- */
+/* Header */
+/* ----------------------------------------------------------------- */
+
+header {
+  font-family: $default-font;
+  color: $text-color;
+  h1 {
+    text-align: center;
+  }
+  margin-bottom: 20px;
+}
+
+div.header-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  place-items: center;
+}
+
+div.gradient-border {
+  width: 95%;
+  height: 1px;
+  margin: 0 auto;
+  background: $main-gradient;
+}
+
+/* ----------------------------------------------------------------- */
+/* Animation Zone */
+/* ----------------------------------------------------------------- */
+
+div.array-container {
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px;
+  @include center();
+  width: 100%;
+
+  div.array-element {
+    height: 60px;
+    width: 60px;
+    margin: 0 1px 0 1px;
+    background: #d16c13;
+    display: inline-block;
+    text-align: center;
+    font-family: $default-font;
+    font-weight: bold;
+    $number-size: 20px;
+
+    p {
+      font-size: $number-size;
+      line-height: $number-size;
+    }
+  }
+}
+
+/* ----------------------------------------------------------------- */
+/* Buttons */
+/* ----------------------------------------------------------------- */
+
+section.buttons {
+  position: fixed;
+  bottom: 7%;
+  @include center();
+  font-family: $default-font;
+
+  div.wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    text-align: center;
+  }
+
+  button {
+    box-sizing: border-box;
+    border: none;
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    background: $main-gradient;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $text-color;
+  }
+}
