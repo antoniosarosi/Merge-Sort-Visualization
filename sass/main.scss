@@ -55,27 +55,29 @@ div.gradient-border {
 /* Animation Zone */
 /* ----------------------------------------------------------------- */
 
-div.array-container {
-  display: inline-flex;
-  justify-content: center;
-  padding: 10px;
-  @include center();
-  width: 100%;
+section.animation-zone {
+  position: relative;
 
-  div.array-element {
-    height: 60px;
-    width: 60px;
-    margin: 0 1px 0 1px;
-    background: #d16c13;
-    display: inline-block;
-    text-align: center;
-    font-family: $default-font;
-    font-weight: bold;
-    $number-size: 20px;
+  div.array-container {
+    position: absolute;
+    $element-size: 45px;
+    $number-size: 15px;
 
-    p {
-      font-size: $number-size;
-      line-height: $number-size;
+    div.array-element {
+      display: inline-flex;
+      height: $element-size;
+      width: $element-size;
+      margin: 0 1px 0 1px;
+      background: #d16c13;
+      display: inline-block;
+      text-align: center;
+      font-family: $default-font;
+      font-weight: bold;
+
+      p {
+        font-size: $number-size;
+        line-height: $number-size;
+      }
     }
   }
 }
