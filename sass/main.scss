@@ -5,7 +5,7 @@
 $bg-color: #212326;
 $default-font: 'Livvic', sans-serif;
 $text-color: #fff;
-$main-gradient: linear-gradient(to right, #d14c13, #d16c13);
+$main-gradient: linear-gradient(to right, #d31010, #fc7805);
 
 @mixin center() {
   width: 90%;
@@ -60,15 +60,15 @@ section.animation-zone {
 
   div.array-container {
     position: absolute;
-    $element-size: 45px;
-    $number-size: 15px;
+    $element-size: 60px;
+    $number-size: 18px;
 
     div.array-element {
       display: inline-flex;
       height: $element-size;
       width: $element-size;
       margin: 0 1px 0 1px;
-      background: #d16c13;
+      background: #ff0000;
       display: inline-block;
       text-align: center;
       font-family: $default-font;

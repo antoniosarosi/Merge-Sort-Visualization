@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    const defaultArray = [2, 4, 1, 6, 3, 5, 7];
+    const defaultArray = [2, 4, 1, 6, 3, 7, 5, -1, -3, 20, 0, -15, -7, 25, 14];
 
     let arrayContainer = $('<div></div>').addClass('array-container');
 
