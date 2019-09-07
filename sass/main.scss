@@ -21,10 +21,6 @@ main {
   @include center();
 }
 
-section.animation-zone {
-  height: 70%;
-}
-
 /* ----------------------------------------------------------------- */
 /* Header */
 /* ----------------------------------------------------------------- */
@@ -57,19 +53,23 @@ div.gradient-border {
 
 section.animation-zone {
   position: relative;
+  height: 60vh;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 
   div.array-container {
+    display: inline-flex;
+    flex: 0 0 auto;
     position: absolute;
-    $element-size: 60px;
-    $number-size: 18px;
+    $element-size: 40px;
+    $number-size: 14px;
 
     div.array-element {
-      display: inline-flex;
       height: $element-size;
       width: $element-size;
       margin: 0 1px 0 1px;
       background: #ff0000;
-      display: inline-block;
       text-align: center;
       font-family: $default-font;
       font-weight: bold;

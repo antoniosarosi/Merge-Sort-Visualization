@@ -1,7 +1,8 @@
 $(document).ready(() => {
 
-    const defaultArray = [2, 4, 1, 6, 3, 7, 5, -1, -3, 20, 0, -15, -7, 25, 14];
+    // Create default array
 
+    const defaultArray = [2, 8, 1, 6, 3, 7, 5, -1, 4, -3, -5];
     let arrayContainer = $('<div></div>').addClass('array-container');
 
     for (i of defaultArray) {
@@ -11,6 +12,8 @@ $(document).ready(() => {
     }
 
     $('section.animation-zone').append(arrayContainer);
+
+    // Center default array
 
     $(arrayContainer).css(
         'left',

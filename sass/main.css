@@ -11,10 +11,6 @@ main {
   margin: 0 auto;
 }
 
-section.animation-zone {
-  height: 70%;
-}
-
 /* ----------------------------------------------------------------- */
 /* Header */
 /* ----------------------------------------------------------------- */
@@ -49,29 +45,38 @@ div.gradient-border {
 /* ----------------------------------------------------------------- */
 section.animation-zone {
   position: relative;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 section.animation-zone div.array-container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   position: absolute;
 }
 
 section.animation-zone div.array-container div.array-element {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   margin: 0 1px 0 1px;
   background: #ff0000;
-  display: inline-block;
   text-align: center;
   font-family: "Livvic", sans-serif;
   font-weight: bold;
 }
 
 section.animation-zone div.array-container div.array-element p {
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 14px;
 }
 
 /* ----------------------------------------------------------------- */
