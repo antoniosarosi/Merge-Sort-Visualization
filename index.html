@@ -1,48 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="vendor/normalize.css" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="vendor/normalize.css" />
 		<link rel="stylesheet" href="vendor/fontawesome/fontawesome.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Livvic&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="sass/main.css">
-    <title>Merge Sort Visualization</title>
-  </head>
-  <body>
+		<link
+			href="https://fonts.googleapis.com/css?family=Livvic&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="sass/main.css" />
+		<title>Merge Sort Visualization</title>
+	</head>
 
-    <header>
-      <div class="header-container">
-        <div id="settings-menu">
-          <i class="fas fa-bars"></i>
-        </div>
+	<body>
+		<div id="settings">
+			<div class="menu-header">
+				<div id="close-menu">
+					<i class="fas fa-times"></i>
+				</div>
+				<h2>Settings</h2>
+			</div>
 
-        <div>
-          <h1>Merge Sort Visualization</h1>
-        </div>
-      </div>
-      <div class="gradient-border"></div>
-    </header>
+			<div class="settings-container">
+				<div>
+					<p>Array to sort:</p>
+					<input
+						id="arr"
+						type="text"
+						placeholder="[0, 1, 2, 3, 4, ...] - Minimum length: 2"
+					/>
+				</div>
 
-    <main>
-      <section class="animation-zone"></section>
+				<div>
+					<p>Animation timeout:</p>
+					<input
+						id="timeout"
+						type="number"
+						placeholder="Miliseconds"
+					/>
+				</div>
 
-      <section class="errors"></section>
+				<div class="errors">
+					<p id="settings-error"></p>
+				</div>
 
-      <section class="buttons">
-        <div class="wrapper">
-          <div><button id="sort">Sort</button></div>
-          <div><button id="unosrt">Unsort</button></div>
-          <div><button id="change-numbers">Change Numbers</button></div>
-        </div>
-      </section>
-    </main>
+				<div class="success">
+					<p id="success"></p>
+				</div>
 
-    <script src="vendor/fontawesome/fontawesome.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/animation.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+				<button id="save-settings">Save</button>
+			</div>
+		</div>
+
+		<header>
+			<div class="header-container">
+				<div id="settings-btn">
+					<i class="fas fa-bars"></i>
+				</div>
+
+				<div>
+					<h1>Merge Sort Visualization</h1>
+				</div>
+			</div>
+			<div class="gradient-border"></div>
+		</header>
+
+		<main>
+			<section class="animation-zone"></section>
+
+			<section class="errors"><p class="error-msg"></p></section>
+
+			<section class="buttons">
+				<div class="wrapper">
+					<div><button id="sort">Sort</button></div>
+					<div><button id="unsort">Unsort</button></div>
+				</div>
+			</section>
+		</main>
+
+		<script src="vendor/fontawesome/fontawesome.js"></script>
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="js/arrays.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/settings.js"></script>
+		<script src="js/animation.js"></script>
+	</body>
 </html>

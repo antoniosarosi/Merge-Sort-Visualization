@@ -5,11 +5,20 @@
 $bg-color: #212326;
 $default-font: 'Livvic', sans-serif;
 $text-color: #fff;
-$main-gradient: linear-gradient(to right, #d31010, #fc7805);
+$main-gradient: linear-gradient(to right, #64d419, #048700);
 
 @mixin center() {
   width: 90%;
   margin: 0 auto;
+}
+
+@mixin scaleOnHover($scale) {
+  & {
+    transition: all .2s ease-in-out;
+  }
+  &:hover {
+    transform: scale($scale);
+  }
 }
 
 body {
@@ -32,19 +41,78 @@ header {
     text-align: center;
   }
   margin-bottom: 20px;
+  #settings-btn {
+    cursor: pointer;
+  }
+  div.header-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    place-items: center;
+  }
+  div.gradient-border {
+    width: 95%;
+    height: 1px;
+    margin: 0 auto;
+    background: $main-gradient;
+  }
 }
 
-div.header-container {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  place-items: center;
-}
+/* ----------------------------------------------------------------- */
+/* Settings */
+/* ----------------------------------------------------------------- */
 
-div.gradient-border {
-  width: 95%;
-  height: 1px;
-  margin: 0 auto;
-  background: $main-gradient;
+div#settings {
+  height: 100vh;
+  width: 400px;
+  left: -400px;
+  top: 0;
+  position: fixed;
+  transition: all .4s ease;
+  z-index: 5;
+  background: rgba(22, 22, 22, 0.95);
+  font-family: 'Livvic', sans-serif;
+  text-align: center;
+  color: #fff;
+  display: block;
+
+  div#close-menu {
+    cursor: pointer;
+    margin: 15px 0 15px 0;
+    color: red;
+    @include scaleOnHover(1.2);
+  }
+  h2 {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 7px;
+  }
+  input {
+    box-sizing: border-box;
+    @include center();
+    &#timeout {
+      width: 40%;
+    }
+  }
+  div.errors, div.success {
+    @include center();
+    height: 40px;
+    margin-top: 50px;
+  }
+ 
+  button {
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 0;
+    height: 32px;
+    width: 50%;
+    margin: 10px auto 0 auto;
+    background: $main-gradient;
+    border-radius: 5px;
+    color: #fff;
+    @include scaleOnHover(1.1);
+  }
 }
 
 /* ----------------------------------------------------------------- */
@@ -62,26 +130,39 @@ section.animation-zone {
     display: inline-flex;
     flex: 0 0 auto;
     position: absolute;
-    $element-size: 40px;
-    $number-size: 14px;
 
     div.array-element {
-      height: $element-size;
-      width: $element-size;
+      height: 40px;
+      width: 40px;
       margin: 0 1px 0 1px;
-      background: #ff0000;
+      background: #d41e1e;
       text-align: center;
       font-family: $default-font;
       font-weight: bold;
 
       p {
-        font-size: $number-size;
-        line-height: $number-size;
+        font-size: 14px;
+        line-height: 14px;
       }
     }
   }
 }
 
+/* ----------------------------------------------------------------- */
+/* Errors */
+/* ----------------------------------------------------------------- */
+
+.errors p, .succes p {
+  font-family: $default-font;
+  font-weight: bold;
+  text-align: center;
+  color: #d41e1e;
+  transition: all ease-in-out .3s;
+}
+
+.success p {
+  color: green;
+}
 /* ----------------------------------------------------------------- */
 /* Buttons */
 /* ----------------------------------------------------------------- */
@@ -95,7 +176,7 @@ section.buttons {
   div.wrapper {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     grid-auto-rows: minmax(50px, auto);
     text-align: center;
   }
@@ -106,9 +187,38 @@ section.buttons {
     width: 80%;
     height: 100%;
     border-radius: 10px;
-    background: $main-gradient;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: $text-color;
+    cursor: pointer;
+    @include scaleOnHover(1.05);
+    &#sort {
+      background: $main-gradient;
+    }
+    &#unsort {
+      background: linear-gradient(to right, #b80000, #d41e1e);
+    }
   }
+}
+
+@media (max-width: 570px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  div#settings {
+    width: 300px;
+  }
+  section.animation-zone {
+    div.array-container {
+      div.array-element {
+        width: 30px;
+        height: 30px;
+        p {
+          font-size: 12px;
+          line-height: 8px;
+        }
+      }
+    }
+  }
+
 }

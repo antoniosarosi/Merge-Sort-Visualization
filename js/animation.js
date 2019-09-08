@@ -1,6 +1,6 @@
 const sideMargin = 20;
 const topMargin = 20;
-const timeout = 1000;
+let timeout = getTimeout();
 
 /**
  * Creates a div.array-container that containes all indices given
@@ -11,13 +11,13 @@ const timeout = 1000;
  * @returns {link tag} div.array-container extracted from original
  */
 function createSubArray(arr, from, to) {
-    let container = $('<div></div>').addClass('array-container');
+    let $container = $('<div></div>').addClass('array-container');
     for (let i = from; i < to; i++) {
-        let value = $('<p></p>').text($(arr.childNodes[i]).text());
-        let element = $('<div></div>').addClass('array-element');
-        container.append(element.append(value));
+        let $value = $('<p></p>').text($(arr.childNodes[i]).text());
+        let $element = $('<div></div>').addClass('array-element');
+        $container.append($element.append($value));
     }
-    return container[0];
+    return $container[0];
 }
 
 /**
@@ -33,10 +33,10 @@ function animateDivision(half, dir) {
                 `translate(${dir}10px, ${-$(half).height() - topMargin}px)`,
                 'translate(0, 0)'
             ]
-        }, timeout);
+        }, timeout.value);
         setTimeout(() => {
             resolve();
-        }, timeout);
+        }, timeout.value);
     });
 }
 
@@ -57,7 +57,7 @@ function animateMergeAlgorithmPlacement(element, target) {
                     ${$(target).offset().top - $(element).offset().top}px
                 )`
             ]
-        }, timeout); 
+        }, timeout.value); 
 
         setTimeout(() => {
             // Replace target value with element value
@@ -67,7 +67,7 @@ function animateMergeAlgorithmPlacement(element, target) {
             // Confirm ordered index
             $(target).css("background", "#21db37");
             resolve();
-        }, timeout);
+        }, timeout.value);
     });
 }
 

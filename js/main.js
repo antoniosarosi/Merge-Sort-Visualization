@@ -1,31 +1,33 @@
+let sorted = false;
+
 $(document).ready(() => {
 
-    // Create default array
-    const defaultArray = [2, 8, 1, 6, 3, 7, 5, -1, 4, -3, -5];
-    let arrayContainer = $('<div></div>').addClass('array-container');
+	// Sort button
 
-    for (i of defaultArray) {
-        let value = $('<p></p>').text(i);
-        let element = $('<div></div>').addClass('array-element');
-        arrayContainer.append(element.append(value));
-    }
-    $('section.animation-zone').append(arrayContainer);
-
-    // Center default array
-    function centerArray() {
-        $(arrayContainer).css(
-            'left',
-            $('section.animation-zone').width() / 2
-            - $(arrayContainer).width() / 2 + 'px'
-        );
-    }
-    centerArray();
-    $(window).resize(centerArray);
-
-    // Sort button
-
-    $('#sort').click(() => {
-        sort(arrayContainer[0]);
+	$("#sort").click(() => {
+        if (sorted) {
+            $('section.errors p').text('Already sorted!');
+            return;
+        }
+        $("section.errors p").text("");
+        let $array = getArrayValue();
+        sort($array[0]);
+        sorted = true;
     });
+    
+    // Unsort button
 
+    $("#unsort").click(() => {
+        if (!sorted) {
+            $("section.errors p").text("Already unsorted!");
+            return;
+        }
+        $("section.errors p").text("");
+        let sortedArray = $('div.array-container')[0];
+        let unsortedArray = [];
+        for (let i = sortedArray.childNodes.length - 1; i >= 0 ; i--)
+            unsortedArray.push($(sortedArray.childNodes[i]).text());
+        unsort(unsortedArray);
+        sorted = false;
+    });
 });
