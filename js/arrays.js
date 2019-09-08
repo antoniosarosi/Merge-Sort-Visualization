@@ -43,18 +43,5 @@ function displayArray(arr) {
  */
 function parse(str) {
     let replaced = str.replace(/\s/g, '');
-
-    if (replaced[0] !== '[' || replaced[replaced.length - 1] !== ']')
-        throw "An array must be placed within square brackets: [0, 1, 2, ...]";
-
-    for (let i = 1; i <= replaced.length - 4; i += 2) {
-        if (isNaN(replaced[i]))
-            throw `Parse Error: '${replaced[i]}' is not a number`;
-        if (replaced[i + 1] !== ',')
-            throw `Format Error: Numbers must be followed by comas, '${replaced[i + 1]}' is not a coma`;
-    }
-    if (isNaN(replaced[replaced.length - 2]))
-        throw `Parse Error: '${replaced[replaced.length - 2]}' is not a number`;  
-
     return JSON.parse(replaced);
 }
